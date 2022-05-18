@@ -1,4 +1,4 @@
-declare module "driver.js" {
+declare module "@hairless/driver.js" {
   class Driver {
     /**
      * Refers to the global document object

@@ -231,9 +231,9 @@ export default class Popover extends Element {
 
     if (this.options.isFirst) {
       this.nextBtnNode.innerHTML = this.options.startBtnText;
-      this.prevBtnNode.setAttribute('disabled', '');
+      this.prevBtnNode.style.display = 'none';
     } else {
-      this.prevBtnNode.removeAttribute('disabled');
+      this.prevBtnNode.style.display = 'inline-block';
     }
 
     if (this.options.isLast) {
@@ -259,7 +259,7 @@ export default class Popover extends Element {
     }
     let htmlString = '';
     for (let counter = 0; counter < this.options.totalCount; counter++) {
-      htmlString += `<li class="${CLASS_STEP_DOT} ${counter === this.options.currentIndex ? CLASS_STEP_DOT_ACTIVE : ''}"></li>`;
+      htmlString += `<div class="${CLASS_STEP_DOT} ${counter === this.options.currentIndex ? CLASS_STEP_DOT_ACTIVE : ''}"></div>`;
     }
     this.stepDotsNode.innerHTML = htmlString;
   }

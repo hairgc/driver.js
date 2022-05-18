@@ -1,4 +1,4 @@
-declare module 'driver.js' {
+declare module "driver.js" {
   class Driver {
     /**
      * Refers to the global document object
@@ -161,7 +161,11 @@ declare module 'driver.js' {
      * @param {Array<Driver.Step>} allSteps all the given steps
      * @param {number} stepIndex array index for the current step
      */
-    private prepareElementFromStep(step: Driver.Step | string, allSteps: Array<Driver.Step>, stepIndex: number): void;
+    private prepareElementFromStep(
+      step: Driver.Step | string,
+      allSteps: Array<Driver.Step>,
+      stepIndex: number
+    ): void;
 
     /**
      * Starts presenting the set steps from the given index
@@ -244,13 +248,15 @@ declare module 'driver.js' {
        * @param {Window} window
        * @param {Document} document
        */
-      constructor(node: HTMLElement | Node,
-                  options: Driver.DriverOptions,
-                  popover: Driver.Popover,
-                  stage: Driver.Stage,
-                  overlay: Driver.Overlay,
-                  window: Window,
-                  document: Document);
+      constructor(
+        node: HTMLElement | Node,
+        options: Driver.DriverOptions,
+        popover: Driver.Popover,
+        stage: Driver.Stage,
+        overlay: Driver.Overlay,
+        window: Window,
+        document: Document
+      );
 
       /**
        * Checks if the give element is in view port or not
@@ -459,9 +465,11 @@ declare module 'driver.js' {
        * @param {Window} window
        * @param {Document} document
        */
-      constructor(options: Driver.PopoverOptions,
-                  window: Window,
-                  document: Document);
+      constructor(
+        options: Driver.PopoverOptions,
+        window: Window,
+        document: Document
+      );
 
       /**
        * Prepares the DOM element for popover and appends to the body
@@ -611,9 +619,11 @@ declare module 'driver.js' {
        * @param {Window} window
        * @param {Document} document
        */
-      constructor(options: Driver.StageOptions,
-                  window: Window,
-                  document: Document);
+      constructor(
+        options: Driver.StageOptions,
+        window: Window,
+        document: Document
+      );
 
       /**
        * Prepares the node and appends to body if not there already
@@ -639,16 +649,16 @@ declare module 'driver.js' {
 
     class Position {
       constructor({
-                    left,
-                    top,
-                    bottom,
-                    right,
-                  }: {
-                    left: number,
-                    top: number,
-                    bottom: number,
-                    right: number
-                  });
+        left,
+        top,
+        bottom,
+        right,
+      }: {
+        left: number;
+        top: number;
+        bottom: number;
+        right: number;
+      });
 
       /**
        * Checks if the given position is valid and can be highlighted
@@ -695,7 +705,7 @@ declare module 'driver.js' {
        * Only show when step length > 1
        * @default true
        */
-      showStepDots?:boolean;
+      showStepDots?: boolean;
 
       /**
        * Text on the button in the final step
@@ -779,7 +789,25 @@ declare module 'driver.js' {
        * Position for the popover on element
        * @default auto
        */
-      position?: string;
+      position?:
+        | "left"
+        | "left-top"
+        | "left-center"
+        | "left-bottom"
+        | "right"
+        | "right-top"
+        | "right-center"
+        | "right-bottom"
+        | "top"
+        | "top-left"
+        | "top-center"
+        | "top-bottom"
+        | "bottom"
+        | "bottom-left"
+        | "bottom-center"
+        | "bottom-right"
+        | "mid-center"
+        | "auto";
 
       /**
        * className for the popover on element
@@ -811,7 +839,7 @@ declare module 'driver.js' {
        * Options to be passed to scrollIntoView if supported by browser
        * @default { behavior: 'instant', block: 'center' }
        */
-      scrollIntoViewOptions?: ScrollIntoViewOptions,
+      scrollIntoViewOptions?: ScrollIntoViewOptions;
 
       /**
        * Clicking outside the highlighted element should reset driver or not
@@ -842,7 +870,7 @@ declare module 'driver.js' {
        * Only show when step length > 1
        * @default true
        */
-      showStepDots?:boolean;
+      showStepDots?: boolean;
 
       /**
        * Whether to show control buttons or not
@@ -915,19 +943,19 @@ declare module 'driver.js' {
        * @param {Driver.Element} element
        * @returns any
        */
-      onHighlighted?: (element: Driver.Element) => void,
+      onHighlighted?: (element: Driver.Element) => void;
 
       /**
        * Callback to be called when element has been deselected
        * @param {Driver.Element} element
        * @returns any
        */
-      onDeselected?: (element: Driver.Element) => void,
+      onDeselected?: (element: Driver.Element) => void;
 
       /**
        * Is called when the overlay is about to reset
        */
-      onReset?: (element: Driver.Element) => void,
+      onReset?: (element: Driver.Element) => void;
 
       /**
        * Is called when the next element is about to be highlighted
@@ -940,11 +968,9 @@ declare module 'driver.js' {
       onPrevious?: (element: Driver.Element) => void;
     }
 
-    interface ElementOptions extends Driver.DriverOptions {
-    }
+    interface ElementOptions extends Driver.DriverOptions {}
 
-    interface StageOptions extends ElementOptions {
-    }
+    interface StageOptions extends ElementOptions {}
   }
 
   export = Driver;

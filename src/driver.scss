@@ -1,14 +1,20 @@
-$text-color: #2d2d2d !default;
+$primary-color: #1890ff;
+$text-color: rgba(0, 0, 0, 0.85) !default;
+$line-height: 1.5715;
 $popover-bg: #ffffff !default;
 $stage-bg: #ffffff !default;
-$button-bg: #f1f1f1 !default;
-$disabled-btn-color: #808080 !default;
-$popover-padding: 15px !default;
+$popover-padding: 16px !default;
 
 $popover-z-index: 1000000000 !default;
 $overlay-z-index: 100002 !default;
 $stage-z-index: 100003 !default;
 $highlighted-element-z-index: 100004 !default;
+
+$btn-default-bg: #ffffff !default;
+$btn-default-color: $text-color;
+$btn-default-border: #d9d9d9;
+$btn-disable-bg: #f5f5f5 !default;
+$btn-disable-color: #00000040 !default;
 
 // Note: If you update this duration, make sure to
 // update `ANIMATION_DURATION_MS` constant
@@ -24,7 +30,7 @@ div#driver-popover-item {
   padding: $popover-padding;
   border-radius: 5px;
   min-width: 250px;
-  max-width: 300px;
+  max-width: 350px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
   z-index: $popover-z-index;
 
@@ -110,14 +116,13 @@ div#driver-popover-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 5px;
+    margin: 0 0 8px;
 
     .driver-popover-title {
-      font: 19px/normal sans-serif;
+      font-size: 16px;
       font-weight: bold;
       display: block;
       position: relative;
-      line-height: 1.5;
       zoom: 1;
     }
 
@@ -147,8 +152,7 @@ div#driver-popover-item {
 
   .driver-popover-description {
     margin-bottom: 0;
-    font: 14px/normal sans-serif;
-    line-height: 1.5;
+    font-size: 14px;
     color: $text-color;
     font-weight: normal;
     zoom: 1;
@@ -158,7 +162,7 @@ div#driver-popover-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 16px;
 
 
     .driver-step-dots {
@@ -181,25 +185,51 @@ div#driver-popover-item {
       flex: 1;
       text-align: right;
       button {
+        line-height: $line-height;
+        position: relative;
         display: inline-block;
-        padding: 3px 10px;
-        border: 1px solid #d4d4d4;
-        text-decoration: none;
-        text-shadow: 1px 1px 0 #fff;
-        color: $text-color;
-        font: 11px/normal sans-serif;
+        white-space: nowrap;
+        text-align: center;
+        border: 1px solid transparent;
+        box-shadow: 0 2px #00000004;
         cursor: pointer;
+        transition: all .3s cubic-bezier(.645,.045,.355,1);
+        user-select: none;
+        touch-action: manipulation;
+        padding: 2px 15px;
+        font-size: 14px;
+        border-radius: 14px;
+        color: $text-color;
+        background: $btn-default-bg;
         outline: 0;
-        background-color: $button-bg;
-        border-radius: 2px;
-        zoom: 1;
-        line-height: 1.3;
-      }
+        border-color: $btn-default-border;
 
-      button.driver-disabled {
-        color: $disabled-btn-color;
-        cursor: default;
-        pointer-events: none;
+        &:hover,
+        &:focus,
+        &:active {
+          outline: 0;
+          text-decoration: none;
+          background: $btn-default-bg;
+          color: $primary-color;
+          border-color: $primary-color;
+        }
+
+        &[disabled] {
+          &,
+          &:hover,
+          &:focus,
+          &:active {
+            color: $btn-disable-color;
+            border-color: $btn-default-border;
+            background: $btn-disable-bg;
+            text-shadow: none;
+            box-shadow: none;
+            cursor: not-allowed;
+          }
+        }
+        &.driver-prev-btn {
+          margin-right: 8px;
+        }
       }
     }
   }
@@ -239,7 +269,7 @@ div#driver-highlighted-element-stage {
   background: $stage-bg;
   z-index: $stage-z-index !important;
   display: none;
-  border-radius: 2px;
+  border-radius: 5px;
 
   transition: all $animation-sec;
 }

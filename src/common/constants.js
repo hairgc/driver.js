@@ -1,5 +1,5 @@
 export const OVERLAY_OPACITY = 0.75;
-export const OVERLAY_PADDING = 10;
+export const OVERLAY_PADDING = 12;
 
 export const SHOULD_ANIMATE_OVERLAY = true;
 export const SHOULD_OUTSIDE_CLICK_CLOSE = true;
@@ -31,7 +31,6 @@ export const CLASS_STEP_DOT_ACTIVE = 'driver-step-dot-active';
 export const CLASS_CLOSE_BTN = 'driver-close-btn';
 export const CLASS_NEXT_STEP_BTN = 'driver-next-btn';
 export const CLASS_PREV_STEP_BTN = 'driver-prev-btn';
-export const CLASS_BTN_DISABLED = 'driver-disabled';
 export const CLASS_NAVIGATION_BTNS = 'driver-navigation-btns';
 
 // NOTE: It must match the one set in the animations in CSS file

@@ -1,6 +1,5 @@
 import Element from './element';
 import {
-  CLASS_BTN_DISABLED,
   CLASS_CLOSE_BTN,
   CLASS_NEXT_STEP_BTN,
   CLASS_POPOVER_DESCRIPTION,
@@ -231,11 +230,9 @@ export default class Popover extends Element {
     }
 
     if (this.options.isFirst) {
-      this.prevBtnNode.classList.add(CLASS_BTN_DISABLED);
       this.nextBtnNode.innerHTML = this.options.startBtnText;
       this.prevBtnNode.setAttribute('disabled', '');
     } else {
-      this.prevBtnNode.classList.remove(CLASS_BTN_DISABLED);
       this.prevBtnNode.removeAttribute('disabled');
     }
 

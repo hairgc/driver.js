@@ -267,12 +267,14 @@ div#driver-highlighted-element-stage {
   z-index: $stage-z-index !important;
   display: none;
   border-radius: 5px;
-
   transition: all $animation-sec;
 }
 
 .driver-highlighted-element {
   z-index: $highlighted-element-z-index !important;
+  &-readonly {
+    pointer-events: none;
+  }
 }
 
 .driver-position-relative {

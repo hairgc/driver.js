@@ -246,6 +246,7 @@ const driver = new Driver({
   opacity: 0.75,                        // Background opacity (0 means only popovers and without overlay)
   padding: 10,                          // Distance of element from around the edges
   allowClose: true,                     // Whether the click on overlay should close or not
+  highlightElementReadonly: true,       // Whether to allow highlight dom clickable or selectable
   overlayClickNext: false,              // Whether the click on overlay should move next
   doneBtnText: 'Done',                  // Text on the final button
   doneBtnClassName: '',                 // className to wrap on the final button
@@ -278,6 +279,7 @@ Here are the set of options that you can pass while defining steps `defineSteps`
 const stepDefinition = {
   element: '#some-item',                // Query selector string or Node to be highlighted
   stageBackground: '#ffffff',           // This will override the one set in driver
+  highlightElementReadonly: true,       // Whether to allow highlight dom clickable or selectable
   popover: {                            // There will be no popover if empty or not given
     className: 'popover-class',         // className to wrap this specific step popover in addition to the general className in Driver options
     title: 'Title',                     // Title on the popover

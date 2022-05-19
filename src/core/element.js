@@ -1,6 +1,6 @@
 import {
   ANIMATION_DURATION_MS,
-  CLASS_DRIVER_HIGHLIGHTED_ELEMENT,
+  CLASS_DRIVER_HIGHLIGHTED_ELEMENT, CLASS_DRIVER_HIGHLIGHTED_ELEMENT_READONLY,
   CLASS_FIX_STACKING_CONTEXT,
   CLASS_POSITION_RELATIVE,
 } from '../common/constants';
@@ -213,6 +213,7 @@ export default class Element {
    */
   removeHighlightClasses() {
     this.node.classList.remove(CLASS_DRIVER_HIGHLIGHTED_ELEMENT);
+    this.node.classList.remove(CLASS_DRIVER_HIGHLIGHTED_ELEMENT_READONLY);
     this.node.classList.remove(CLASS_POSITION_RELATIVE);
 
     const stackFixes = this.document.querySelectorAll(`.${CLASS_FIX_STACKING_CONTEXT}`);
@@ -232,6 +233,10 @@ export default class Element {
     // Don't make relative if element already has some position set
     if (this.canMakeRelative()) {
       this.node.classList.add(CLASS_POSITION_RELATIVE);
+    }
+
+    if (this.options.highlightElementReadonly) {
+      this.node.classList.add(CLASS_DRIVER_HIGHLIGHTED_ELEMENT_READONLY);
     }
 
     // Check and re-define the stacking context

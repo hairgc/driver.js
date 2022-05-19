@@ -194,6 +194,12 @@ declare module "@hairless/driver.js" {
       stageBackground?: string;
 
       /**
+       * highlight element not allow select & click
+       * @default false
+       */
+      highlightElementReadonly?: boolean;
+
+      /**
        * Options representing popover for this step
        */
       popover?: Driver.PopoverOptions;
@@ -858,6 +864,13 @@ declare module "@hairless/driver.js" {
        * @default false
        */
       overlayClickNext?: boolean;
+
+
+      /**
+       * highlight element not allow select & click
+       * @default false
+       */
+      highlightElementReadonly?: boolean;
 
       /**
        * Background color for the stage behind the highlighted element

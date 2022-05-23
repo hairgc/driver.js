@@ -36,12 +36,12 @@ div#driver-popover-item {
   z-index: $popover-z-index;
 
   .driver-popover-tip {
-    border: 5px solid $popover-bg;
+    border: 8px solid $popover-bg;
     content: "";
     position: absolute;
 
     &.bottom {
-      bottom: -10px;
+      bottom: -16px;
       border-top-color: $popover-bg;
       border-right-color: transparent;
       border-bottom-color: transparent;
@@ -57,7 +57,7 @@ div#driver-popover-item {
     }
 
     &.left {
-      left: -10px;
+      left: -16px;
       top: 10px;
       border-top-color: transparent;
       border-right-color: $popover-bg;
@@ -75,7 +75,7 @@ div#driver-popover-item {
     }
 
     &.right {
-      right: -10px;
+      right: -16px;
       top: 10px;
       border-top-color: transparent;
       border-right-color: transparent;
@@ -93,7 +93,7 @@ div#driver-popover-item {
     }
 
     &.top {
-      top: -10px;
+      top: -16px;
       border-top-color: transparent;
       border-right-color: transparent;
       border-bottom-color: $popover-bg;

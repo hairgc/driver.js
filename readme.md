@@ -1,14 +1,14 @@
 <h1 align="center"><img height="150" src="./demo/images/driver.png" /><br> Driver.js</h1>
 
 <p align="center">
-  <a href="https://github.com/kamranahmedse/driver.js/blob/master/license">
+  <a href="https://github.com/hairgc/driver.js/blob/master/license">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://npmjs.org/package/driver.js">
-    <img src="https://img.shields.io/npm/v/driver.js.svg" alt="version" />
+  <a href="https://npmjs.org/package/@hairless/driver.js">
+    <img src="https://img.shields.io/npm/v/@hairless/driver.js.svg" alt="version" />
   </a>
-  <a href="https://npmjs.org/package/driver.js">
-    <img src="https://img.shields.io/npm/dt/driver.js.svg" alt="downloads" />
+  <a href="https://npmjs.org/package/@hairless/driver.js">
+    <img src="https://img.shields.io/npm/dt/@hairless/driver.js.svg" alt="downloads" />
   </a>
 </p>
 

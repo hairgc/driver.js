@@ -352,8 +352,10 @@ export default class Driver {
   defineSteps(steps) {
     this.steps = [];
 
-    for (let counter = 0; counter < steps.length; counter++) {
-      const element = this.prepareElementFromStep(steps[counter], steps, counter);
+    const validSteps = steps.filter(step => !!(isDomElement(step.element) ? step.element : this.document.querySelector(step.element)));
+
+    for (let counter = 0; counter < validSteps.length; counter++) {
+      const element = this.prepareElementFromStep(validSteps[counter], validSteps, counter);
       if (!element) {
         continue;
       }

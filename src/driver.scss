@@ -48,7 +48,8 @@ div#driver-popover-item {
       border-left-color: transparent;
 
       &.position-center {
-        left: 49%;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       &.position-right {
@@ -65,7 +66,8 @@ div#driver-popover-item {
       border-left-color: transparent;
 
       &.position-center {
-        top: 46%;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
       &.position-bottom {
@@ -83,7 +85,8 @@ div#driver-popover-item {
       border-left-color: $popover-bg;
 
       &.position-center {
-        top: 46%;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
       &.position-bottom {
@@ -100,7 +103,8 @@ div#driver-popover-item {
       border-left-color: transparent;
 
       &.position-center {
-        left: 49%;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       &.position-right {

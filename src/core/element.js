@@ -47,24 +47,12 @@ export default class Element {
    * @public
    */
   isInView() {
-    let top = this.node.offsetTop;
-    let left = this.node.offsetLeft;
-    const width = this.node.offsetWidth;
-    const height = this.node.offsetHeight;
-
-    let el = this.node;
-
-    while (el.offsetParent) {
-      el = el.offsetParent;
-      top += el.offsetTop;
-      left += el.offsetLeft;
-    }
-
+    const rect = this.node.getBoundingClientRect();
     return (
-      top >= this.window.pageYOffset
-      && left >= this.window.pageXOffset
-      && (top + height) <= (this.window.pageYOffset + this.window.innerHeight)
-      && (left + width) <= (this.window.pageXOffset + this.window.innerWidth)
+      rect.top >= 0
+      && rect.left >= 0
+      && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+      && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
 

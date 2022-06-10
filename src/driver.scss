@@ -39,6 +39,8 @@ div#driver-popover-item {
     border: 8px solid $popover-bg;
     content: "";
     position: absolute;
+    width: 16px;
+    height: 16px;
 
     &.bottom {
       bottom: -16px;
